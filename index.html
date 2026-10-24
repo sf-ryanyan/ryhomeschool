@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="RY Homes | Ryan Yan —— 旧金山湾区学区安家规划。外州搬迁、海外来美、本地升级,帮你选对学区、找对房子。中英双语持牌地产经纪。">
+<meta name="theme-color" content="#f7f3eb">
+<meta property="og:title" content="RY Homes 湾区学区安家">
+<meta property="og:description" content="让孩子入读湾区顶尖公立学区,比你想的更近。选学区 · 找房 · 签约 · 安家,全程双语服务。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23275840'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='%23f7f3eb' text-anchor='middle'%3ERY%3C/text%3E%3C/svg%3E">
+<title>RY Homes 湾区学区安家</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+</head>
+<body>
+<style>
+/* Layout: 安家手册 —— 大字首屏、象牙纸底、松绿主色、金色点缀,中英一键切换 */
+/* 色卡:邻近色(松绿 → 橄榄 → 金),muted character,60-30-10 —— 纸底 60 / 松绿 30 / 金 10 */
+:root{
+  --paper:oklch(96.5% 0.012 85);
+  --card:oklch(99% 0.006 85);
+  --ink:oklch(25.5% 0.018 162);
+  --ink-soft:oklch(47.5% 0.020 158);
+  --line:oklch(89.2% 0.014 85);
+  --accent:oklch(42% 0.068 160);
+  --accent-soft:oklch(94.5% 0.020 158);
+  --gold:oklch(52.5% 0.100 78);
+  --hairline:oklch(25.5% 0.018 162 / .10);
+  --inner-light:oklch(100% 0 0 / .85);
+  --lift:0 1px 2px oklch(25.5% 0.018 162 / .035), 0 10px 26px -18px oklch(25.5% 0.018 162 / .14);
+  --lift-h:0 1px 2px oklch(25.5% 0.018 162 / .05), 0 16px 34px -20px oklch(25.5% 0.018 162 / .20);
+  --ease:cubic-bezier(.32,.72,0,1);
+  --serif:"Fraunces","Noto Serif SC","Noto Serif CJK SC","Songti SC",Georgia,serif;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:oklch(20.5% 0.012 160); --card:oklch(25.2% 0.013 162); --ink:oklch(93.5% 0.012 88); --ink-soft:oklch(76% 0.014 150);
+    --line:oklch(34.5% 0.016 160); --accent:oklch(76% 0.072 160); --accent-soft:oklch(31% 0.028 160); --gold:oklch(80% 0.085 82);
+    --hairline:oklch(100% 0 0 / .10);
+    --inner-light:oklch(100% 0 0 / .07);
+    --lift:0 1px 2px oklch(0% 0 0 / .3), 0 10px 26px -18px oklch(0% 0 0 / .6);
+    --lift-h:0 1px 2px oklch(0% 0 0 / .4), 0 16px 34px -20px oklch(0% 0 0 / .7);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:oklch(20.5% 0.012 160); --card:oklch(25.2% 0.013 162); --ink:oklch(93.5% 0.012 88); --ink-soft:oklch(76% 0.014 150);
+    --line:oklch(34.5% 0.016 160); --accent:oklch(76% 0.072 160); --accent-soft:oklch(31% 0.028 160); --gold:oklch(80% 0.085 82);
+    --hairline:oklch(100% 0 0 / .10);
+    --inner-light:oklch(100% 0 0 / .07);
+    --lift:0 1px 2px oklch(0% 0 0 / .3), 0 10px 26px -18px oklch(0% 0 0 / .6);
+    --lift-h:0 1px 2px oklch(0% 0 0 / .4), 0 16px 34px -20px oklch(0% 0 0 / .7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.8;
+  padding-inline:16px;
+}
+img{max-width:100%}
+.wrap{max-width:960px; margin:0 auto; position:relative; z-index:1}
+
+/* paper grain */
+.grain{
+  position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.025; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .grain{mix-blend-mode:screen; opacity:.04}}
+:root[data-theme="dark"] .grain{mix-blend-mode:screen; opacity:.04}
+
+/* gentle fade-up */
+.reveal{transition:opacity .75s var(--ease), transform .75s var(--ease)}
+.js .reveal{opacity:0; transform:translateY(22px)}
+.js .reveal.in{opacity:1; transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .reveal{opacity:1!important; transform:none!important}
+  *{transition:none!important; animation:none!important}
+}
+
+/* language switching */
+#app:not(.en-mode) .en{display:none!important}
+#app.en-mode .zh{display:none!important}
+
+/* top bar */
+.bar{display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:16px 10px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:700; letter-spacing:.04em; font-size:17px}
+.seal{
+  width:36px; height:36px; border:2px solid var(--gold); color:var(--gold);
+  display:grid; place-items:center; font-family:var(--serif); font-weight:900; font-size:13px;
+  transform:rotate(-4deg); border-radius:4px; flex:none;
+}
+.bar-right{display:flex; align-items:center; gap:14px}
+.bar-right .phone{font-weight:700; font-size:15px; color:var(--accent); text-decoration:none}
+.bar-right .phone:hover{color:var(--ink)}
+.langbtn{
+  border:1.5px solid var(--accent); background:transparent; color:var(--accent);
+  font-weight:700; font-size:13px; padding:5px 14px; border-radius:999px; cursor:pointer; font-family:var(--sans);
+}
+.langbtn:hover{background:var(--accent-soft)}
+
+/* hero */
+.hero{padding-block:70px 46px}
+.hero h1{
+  font-family:var(--serif); font-weight:900; color:var(--ink);
+  font-size:clamp(31px,5.8vw,56px); line-height:1.28; margin:18px 0 20px; text-wrap:balance;
+}
+.hero p.sub{margin:0 0 26px; font-size:17px; color:var(--ink-soft); max-width:38em; line-height:1.85}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:30px}
+.chip{
+  background:var(--accent-soft); color:var(--accent); font-size:13px; font-weight:500;
+  padding:5px 13px; border-radius:999px;
+}
+.heroimg{border-radius:14px; overflow:hidden}
+.heroimg img{display:block; width:100%; aspect-ratio:16/7; object-fit:cover}
+.eyebrow{font-size:12px; letter-spacing:.22em; color:var(--gold); font-weight:700; text-transform:uppercase}
+.cta-row{display:flex; flex-wrap:wrap; gap:10px}
+.btn{
+  display:inline-flex; align-items:center; gap:14px; text-decoration:none;
+  font-weight:700; font-size:15px; font-family:var(--sans);
+  padding:10px 10px 10px 24px; border-radius:999px; border:1.5px solid var(--accent);
+  cursor:pointer; min-height:48px; touch-action:manipulation;
+  transition:transform .5s var(--ease), background .5s var(--ease), box-shadow .5s var(--ease);
+}
+.btn .bb{
+  width:32px; height:32px; flex:none; border-radius:999px; display:grid; place-items:center;
+  transition:transform .5s var(--ease);
+}
+.btn .bb svg{width:14px; height:14px}
+@media (hover:hover){ .btn:hover .bb{transform:translate(3px,-1px) scale(1.05)} }
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+.btn.primary{background:var(--accent); color:var(--paper); border-color:var(--accent); box-shadow:var(--lift)}
+.btn.primary .bb{background:oklch(100% 0 0 / .18)}
+@media (hover:hover){ .btn.primary:hover{box-shadow:var(--lift-h)} }
+.btn.ghost{color:var(--accent); background:var(--card)}
+.btn.ghost .bb{background:var(--accent-soft)}
+.btn:hover{filter:brightness(1.06)}
+
+/* sections */
+section{padding-block:76px; border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:none}
+.sec-head{margin-bottom:38px; max-width:46em}
+.sec-head .eyebrow{display:block; margin-bottom:8px}
+h2{font-family:var(--serif); font-weight:900; font-size:clamp(26px,4.4vw,40px); margin:0 0 12px; line-height:1.32; text-wrap:balance}
+.sec-head p{color:var(--ink-soft); margin:0; font-size:16.5px; line-height:1.85}
+
+/* reason cards */
+.grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px}
+.rcard{background:var(--card); border:1px solid var(--hairline); border-radius:14px; padding:28px 28px 26px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.rcard .rn{font-family:var(--serif); font-weight:700; color:var(--gold); font-size:16px; letter-spacing:.06em; font-variant-numeric:tabular-nums}
+.rcard h3{font-family:var(--serif); font-size:19px; margin:8px 0 10px; font-weight:700}
+.rcard p{margin:0; font-size:14.5px; color:var(--ink-soft)}
+.lead-out{
+  margin-top:22px; font-family:var(--serif); font-weight:700; font-size:17px;
+  border-left:3px solid var(--gold); padding:10px 16px; background:var(--card); border-radius:0 8px 8px 0;
+}
+
+/* knowledge box */
+.kbox{
+  background:var(--accent-soft); border:1px solid var(--hairline); border-radius:14px;
+  padding:24px 26px; margin-bottom:26px;
+}
+.kbox h3{font-family:var(--serif); font-size:17px; margin:0 0 8px; color:var(--accent)}
+.kbox p{margin:8px 0; font-size:14.5px}
+
+/* city cards */
+.city{
+  background:var(--card); border:1px solid var(--hairline); border-radius:16px;
+  padding:32px 34px; margin-bottom:18px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift);
+  transition:box-shadow .6s var(--ease);
+}
+.city-top{display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:2px}
+.city h3{font-family:var(--serif); font-weight:900; font-size:23px; margin:0}
+.city .district{font-size:12.5px; color:var(--ink-soft); letter-spacing:.04em}
+.city .schools{
+  font-size:15px; font-weight:700; color:var(--accent); margin:8px 0 4px;
+  padding-bottom:10px; border-bottom:1px solid var(--line);
+}
+.city .gs{
+  display:inline-block; margin-left:10px; font-size:12.5px; font-weight:600; font-family:var(--serif);
+  background:var(--accent-soft); color:var(--accent); padding:2px 10px;
+  border-radius:999px; letter-spacing:.02em; vertical-align:middle; white-space:nowrap;
+}
+.city .rowline{display:flex; gap:10px; font-size:14.5px; margin:8px 0; align-items:flex-start}
+.city .rl{flex:none; width:5.2em; color:var(--gold); font-weight:700; font-size:13px; letter-spacing:.04em}
+.city .rv{min-width:0; color:var(--ink-soft)}
+.city .rv b{color:var(--ink)}
+.whylist{margin:4px 0 0; padding-left:1.1em; font-size:14.5px; color:var(--ink-soft)}
+.whylist li{margin:3px 0}
+.whylist b{color:var(--ink)}
+.insider{
+  margin-top:12px; font-size:14px; background:var(--paper); border-left:3px solid var(--accent);
+  padding:10px 14px; border-radius:0 6px 6px 0; color:var(--ink);
+}
+.insider .tag{font-size:11.5px; letter-spacing:.16em; color:var(--accent); font-weight:700; text-transform:uppercase; display:block; margin-bottom:2px}
+.banner{border-radius:12px; overflow:hidden; margin:26px 0 0}
+.banner img{display:block; width:100%; aspect-ratio:16/6.5; object-fit:cover}
+
+/* myth rows */
+.myth{display:flex; gap:16px; background:var(--card); border:1px solid var(--hairline); border-radius:14px; padding:20px 22px; margin-bottom:12px; align-items:flex-start;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.myth .x{flex:none; width:34px; height:34px; border-radius:50%; background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-weight:900; font-size:16px; border:1.5px solid var(--accent)}
+.myth .m-body{min-width:0}
+.myth h4{margin:4px 0 4px; font-size:15.5px; font-family:var(--serif)}
+.myth p{margin:0; font-size:14.5px; color:var(--ink-soft)}
+.myth p b{color:var(--ink)}
+
+/* checklist */
+.check{background:var(--card); border:1px solid var(--hairline); border-radius:14px; padding:22px 24px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.check h4{margin:0 0 6px; font-size:16px; font-family:var(--serif); color:var(--accent)}
+.check p{margin:0 0 6px; font-size:14.5px}
+.check .tip{font-size:13.5px; color:var(--ink-soft); border-top:1px dashed var(--line); padding-top:8px; margin-top:8px}
+.idbox{border:1px solid var(--gold); border-radius:14px; padding:22px 24px; background:var(--card); margin-top:16px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.idbox h4{margin:0 0 8px; font-family:var(--serif); font-size:16.5px; color:var(--gold)}
+.idbox p{margin:6px 0; font-size:14.5px}
+
+/* services */
+.steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:8px}
+.step{background:var(--card); border:1px solid var(--hairline); border-radius:14px; padding:20px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.step .sn{font-family:var(--serif); font-size:27px; font-weight:700; color:var(--gold); font-variant-numeric:tabular-nums}
+.step h4{font-size:15.5px; margin:4px 0 6px; font-family:var(--serif)}
+.step p{margin:0; font-size:13.8px; color:var(--ink-soft)}
+.svc2{background:var(--card); border:1px solid var(--hairline); border-radius:14px; padding:24px 26px; margin-top:16px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.svc2 h3{font-family:var(--serif); font-size:18px; margin:0 0 6px}
+.svc2 p{margin:0; font-size:14.5px; color:var(--ink-soft)}
+
+/* scope box */
+.scope{
+  margin-top:16px; border:1.5px solid var(--accent); border-radius:10px;
+  background:var(--card); padding:22px 24px;
+}
+.scope h3{font-family:var(--serif); font-size:18px; margin:0 0 14px; color:var(--accent)}
+.scope-cols{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px}
+.scope h4{font-size:14.5px; margin:0 0 6px}
+.scope ul{margin:0; padding-left:1.2em; font-size:14px; color:var(--ink-soft)}
+.scope li{margin:4px 0}
+
+/* cases */
+.case{
+  background:var(--card); border:1px solid var(--hairline); border-radius:16px; padding:24px 26px;
+  border-top:3px solid var(--accent);
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift);
+}
+.case .from{font-size:12.5px; letter-spacing:.14em; color:var(--gold); font-weight:700}
+.case h3{font-family:var(--serif); font-size:18px; margin:6px 0 10px}
+.case p{margin:6px 0; font-size:14.5px; color:var(--ink-soft)}
+.case p b{color:var(--ink)}
+.case-note{font-size:13px; color:var(--ink-soft); margin-top:16px; line-height:1.8}
+
+/* faq */
+details.faq{background:var(--card); border:1px solid var(--hairline); border-radius:14px; margin-bottom:10px; overflow:hidden;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+details.faq>summary{list-style:none; cursor:pointer; padding:14px 18px; font-weight:700; font-size:15px; display:flex; gap:10px; align-items:baseline}
+details.faq>summary::-webkit-details-marker{display:none}
+details.faq>summary .q{color:var(--gold); font-family:var(--serif); flex:none}
+details.faq>summary:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+details.faq .a{padding:0 18px 16px; font-size:14.5px; color:var(--ink-soft)}
+details.faq .a b{color:var(--ink)}
+
+/* form */
+.formwrap{background:var(--card); border:1px solid var(--hairline); border-radius:18px; padding:30px 28px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift)}
+.formgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px}
+.field{display:flex; flex-direction:column; gap:5px; min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:13px; font-weight:700; color:var(--ink-soft); letter-spacing:.04em}
+.field input,.field select,.field textarea{
+  font-family:var(--sans); font-size:15px; color:var(--ink); background:var(--paper);
+  border:1px solid var(--line); border-radius:7px; padding:10px 12px; width:100%;
+}
+.field textarea{resize:vertical; min-height:80px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+.hp{position:absolute!important; left:-9999px!important; width:1px!important; height:1px!important; opacity:0}
+.formfoot{margin-top:18px; display:flex; align-items:center; gap:16px; flex-wrap:wrap}
+.privacy{font-size:12.5px; color:var(--ink-soft)}
+.formmsg{margin-top:16px; padding:16px 18px; border-radius:8px; font-size:14.5px; line-height:1.75}
+.formmsg.ok{background:var(--accent-soft); border-left:3px solid var(--accent); color:var(--ink)}
+.formmsg.err{background:var(--card); border-left:3px solid var(--gold); color:var(--ink)}
+
+/* contact */
+.contact-card{
+  background:var(--card); border:1px solid var(--hairline); border-radius:18px;
+  padding:32px 28px; display:flex; flex-wrap:wrap; gap:26px; align-items:flex-start; margin-top:18px;
+  box-shadow:inset 0 1px 0 var(--inner-light), var(--lift);
+}
+.contact-id{flex:1 1 240px; min-width:0}
+.contact-id .name{font-family:var(--serif); font-weight:900; font-size:26px; display:flex; align-items:center; gap:12px}
+.contact-id .role{color:var(--ink-soft); margin-top:6px; font-size:15px; line-height:1.7}
+.contact-list{flex:1 1 300px; min-width:0; display:flex; flex-direction:column; gap:12px}
+.c-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.c-label{font-size:12.5px; letter-spacing:.14em; color:var(--ink-soft); width:60px; flex:none; text-transform:uppercase}
+.c-val{font-weight:700; word-break:break-all; min-width:0; font-size:17px}
+.copy{
+  border:1px solid var(--line); background:var(--paper); color:var(--ink-soft);
+  font-size:12px; padding:4px 12px; border-radius:6px; cursor:pointer; font-family:var(--sans);
+}
+.copy:hover{color:var(--accent); border-color:var(--accent)}
+.copy:focus-visible,.btn:focus-visible,.langbtn:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+footer{padding-block:28px 44px; color:var(--ink-soft); font-size:12.5px; line-height:1.9}
+footer .eho{font-weight:700; letter-spacing:.06em; color:var(--ink)}
+footer .dis{display:block; margin-top:8px}
+@media (hover:hover){ .city:hover{box-shadow:inset 0 1px 0 var(--inner-light), var(--lift-h)} }
+@media (max-width:560px){
+  .heroimg img{aspect-ratio:16/11}
+  .hero{padding-block:46px 34px}
+  section{padding-block:54px}
+  .city{padding:24px 20px}
+}
+</style>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div id="app">
+<div class="wrap">
+
+  <!-- TOP BAR -->
+  <div class="bar">
+    <div class="brand"><span class="seal">RY</span><span>RY Homes<span class="zh"> · 湾区学区安家</span><span class="en"> · School District Housing</span></span></div>
+    <div class="bar-right">
+      <a class="phone" href="#contact"><span class="zh">联系我</span><span class="en">Contact</span></a>
+      <button class="langbtn" id="langbtn" type="button"><span class="zh">EN</span><span class="en">中文</span></button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="eyebrow"><span class="zh">SF Bay Area · 学区安家规划</span><span class="en">SF Bay Area · School District Relocation</span></span>
+    <h1>
+      <span class="zh">让孩子入读湾区顶尖公立学区,<br>比你想的更近</span>
+      <span class="en">Top Bay Area public schools —<br>closer than you think</span>
+    </h1>
+    <p class="sub">
+      <span class="zh">外州搬迁 · 海外来美 · 本地升级 —— 双语持牌经纪 Ryan,帮你选对学区、找对房子,把"住"这件事稳稳落地。</span>
+      <span class="en">Moving from another state, from overseas, or across town — bilingual licensed agent Ryan helps you choose the right district and find the right home, so the housing side lands cleanly.</span>
+    </p>
+    <div class="chips">
+      <span class="chip"><span class="zh">十分学区</span><span class="en">10/10 districts</span></span>
+      <span class="chip"><span class="zh">租房落地</span><span class="en">Rent to land</span></span>
+      <span class="chip"><span class="zh">买房升级</span><span class="en">Buy to settle</span></span>
+      <span class="chip"><span class="zh">中英双语</span><span class="en">Bilingual</span></span>
+      <span class="chip"><span class="zh">远程也能办</span><span class="en">Fully remote</span></span>
+    </div>
+    <div class="cta-row">
+      <a class="btn primary" href="#contact"><span><span class="zh">免费咨询</span><span class="en">Free consultation</span></span><span class="bb" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M6 3h7v7"/></svg></span></a>
+      <a class="btn ghost" href="#map"><span><span class="zh">看学区对比</span><span class="en">Compare districts</span></span><span class="bb" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+    </div>
+  </div>
+  <div class="heroimg"><img src="img/hero.jpg" alt=""></div>
+
+  <!-- WHY BAY AREA -->
+  <section id="why">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">Why Bay Area</span>
+      <h2><span class="zh">为什么是旧金山湾区?</span><span class="en">Why the San Francisco Bay Area?</span></h2>
+    </div>
+    <div class="grid2">
+      <div class="rcard reveal reveal"><div class="rn">01</div>
+        <h3><span class="zh">全美顶级公立教育带</span><span class="en">One of America's strongest public-school regions</span></h3>
+        <p><span class="zh">加州公立高中排行榜前列常年被湾区占据,多所高中跻身全美百强。在这里,"好学校"不是一两所,而是一整片。</span><span class="en">Bay Area high schools consistently sit at the top of California rankings, with several among the best in the nation. Here, a "good school" isn't one campus — it's a whole region.</span></p>
+      </div>
+      <div class="rcard reveal reveal"><div class="rn">02</div>
+        <h3><span class="zh">顶尖教育,更低的成本</span><span class="en">Elite schooling, far lower cost</span></h3>
+        <p><span class="zh">加州公立学校由政府资助,学区内居民子女就读通常无需缴纳学费;相比私立学校每年数万美元的开销,家庭总成本大幅降低。投入主要在"住"—— 这正是学区房策略的价值所在。</span><span class="en">California public schools are state-funded, and resident children generally attend without tuition. Compared with tens of thousands a year for private school, the total cost drops sharply — your investment goes into housing instead. That's the whole point of the school-district strategy.</span></p>
+      </div>
+      <div class="rcard reveal reveal"><div class="rn">03</div>
+        <h3><span class="zh">出路看得见</span><span class="en">A visible path forward</span></h3>
+        <p><span class="zh">湾区顶尖高中每年大量毕业生进入加州大学系统(UC Berkeley、UCLA 等)及全美名校;身处斯坦福与硅谷的环境,孩子的眼界从中学阶段就开始不同。</span><span class="en">Graduates head to the UC system (Berkeley, UCLA) and top universities nationwide every year. Growing up beside Stanford and Silicon Valley changes what a teenager believes is possible.</span></p>
+      </div>
+      <div class="rcard reveal reveal"><div class="rn">04</div>
+        <h3><span class="zh">华人家庭的软着陆</span><span class="en">A soft landing for Chinese-speaking families</span></h3>
+        <p><span class="zh">成熟的华人社区、中文服务、熟悉的超市与课外资源 —— 孩子过渡得快,家长也不会孤立无援。</span><span class="en">Established Chinese communities, bilingual services, familiar groceries and after-school programs — children adapt faster, and parents aren't on their own.</span></p>
+      </div>
+    </div>
+    <div class="lead-out reveal reveal">
+      <span class="zh">但湾区有上百个学区,水平差异巨大 —— 选对城市、选对街区,才是关键。</span>
+      <span class="en">But the Bay Area has over a hundred districts, and they differ enormously. Choosing the right city — and the right street — is what decides the outcome.</span>
+    </div>
+  </section>
+
+  <!-- DISTRICT MAP -->
+  <section id="map">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">The Districts</span>
+      <h2><span class="zh">好学校在哪?一次看懂</span><span class="en">Where the good schools are</span></h2>
+      <p><span class="zh">以下是华人家庭最关注的六大学区带。学校评分引自 GreatSchools,排名引自 US News 2026-27 全美最佳高中榜,租金为市场公开行情整理 —— 数据截至 2026 年 10 月,实际请以各学区与平台官方发布为准。</span><span class="en">The six district areas families ask about most. School ratings are from GreatSchools, rankings from the US News 2026-27 Best High Schools list, and rents compiled from public market data — all as of October 2026. Always confirm with the district and the source directly.</span></p>
+    </div>
+
+    <div class="kbox reveal reveal">
+      <h3><span class="zh">先搞懂两个概念</span><span class="en">Two concepts to know first</span></h3>
+      <p><span class="zh"><b>"十分学区"是怎么来的?</b> 美国家长普遍参考 GreatSchools 评分(1-10 分,10 分最高),同时也看 US News、Niche 等榜单。评分综合了学术成绩、升学准备度与学生进步幅度,每年更新。</span><span class="en"><b>Where does a "10-rated school" come from?</b> Parents commonly use GreatSchools ratings (1-10, 10 highest), alongside US News and Niche rankings. The score blends test performance, college readiness and student growth, and is updated yearly.</span></p>
+      <p><span class="zh"><b>学区 ≠ 学校边界。</b> 一个学区内往往有多所高中,由"就读边界"(Attendance Boundary)决定你家孩子去哪一所 —— 同一条街的两侧可能属于不同学校。<b>签约前核对地址归属,是最容易被忽略、也最致命的一步。</b></span><span class="en"><b>District ≠ attendance boundary.</b> A district often has several high schools, and the attendance boundary decides which one your child attends — two sides of one street can feed different schools. <b>Verifying the exact address before signing a lease is the step families miss most.</b></span></p>
+    </div>
+
+    <div class="city reveal reveal">
+      <div class="city-top"><h3>Palo Alto</h3><span class="district">Palo Alto Unified (PAUSD)</span></div>
+      <div class="schools">Palo Alto High (Paly) · Henry M. Gunn High<span class="gs">GreatSchools 10/10</span></div>
+      <ul class="whylist">
+        <li><b><span class="zh">学术:</span><span class="en">Academics:</span></b> <span class="zh">两所高中 GreatSchools 均为满分 <b>10/10</b>;Gunn 在 US News 2026-27 全加州公立高中榜位列第 <b>23</b> 位(全美第 180)</span><span class="en">both high schools rate a full <b>10/10</b> on GreatSchools; Gunn ranks <b>#23</b> among California public high schools in the US News 2026-27 list (#180 nationally)</span></li>
+        <li><b><span class="zh">资源:</span><span class="en">Resources:</span></b> <span class="zh">紧邻斯坦福大学,社区教育氛围与课外资源密度极高</span><span class="en">next to Stanford, with unusually dense community and extracurricular resources</span></li>
+        <li><b><span class="zh">升学:</span><span class="en">Outcomes:</span></b> <span class="zh">每年大量毕业生进入 UC 系统与全美顶尖院校</span><span class="en">large numbers head to the UC system and top national universities each year</span></li>
+      </ul>
+      <div class="rowline"><span class="rl"><span class="zh">中小学</span><span class="en">K-8</span></span><span class="rv"><span class="zh">全学区小学与初中整体评分同样优秀 —— 不是只有高中强,而是全链条强。</span><span class="en">Elementary and middle schools across the district rate strongly too — the whole pipeline, not just the high schools.</span></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">租金参考</span><span class="en">Rent</span></span><span class="rv"><b><span class="zh">2房约 $3,500 起</span><span class="en">2BR from ~$3,500/mo</span></b></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">适合</span><span class="en">Best for</span></span><span class="rv"><span class="zh">教育优先级最高、预算相对充足的家庭</span><span class="en">families who put education first with a flexible budget</span></span></div>
+      <div class="insider"><span class="tag"><span class="zh">内行话</span><span class="en">Insider note</span></span>
+        <span class="zh">PAUSD 覆盖整个 Palo Alto 市(并延伸至斯坦福校区及 Los Altos Hills 部分区域),城内落地即在学区内;但去 Paly 还是 Gunn <b>按家庭住址划分</b>,签约前一定要核对地址到底归哪一所。</span>
+        <span class="en">PAUSD covers the entire city (and extends to the Stanford campus and parts of Los Altos Hills), so any Palo Alto address is in-district — but whether you get Paly or Gunn is <b>decided by your home address</b>. Check which one yours feeds before signing.</span>
+      </div>
+    </div>
+
+    <div class="city reveal reveal">
+      <div class="city-top"><h3>Cupertino <span class="zh">/ 西圣何塞</span><span class="en">/ West San Jose</span></h3><span class="district">Fremont Union High (FUHSD)</span></div>
+      <div class="schools">Monta Vista High · Lynbrook High<span class="gs">GreatSchools 10/10</span></div>
+      <ul class="whylist">
+        <li><b><span class="zh">学术:</span><span class="en">Academics:</span></b> <span class="zh">理工与数学竞赛传统深厚,两所均为 GreatSchools <b>10/10</b>;US News 2026-27 全加州排名:Lynbrook 第 <b>9</b> 位(全美 92)、Monta Vista 第 <b>17</b> 位(全美 134)</span><span class="en">a deep STEM and math-competition culture; both rate <b>10/10</b> on GreatSchools. US News 2026-27 California ranks: Lynbrook <b>#9</b> (#92 nationally), Monta Vista <b>#17</b> (#134)</span></li>
+        <li><b><span class="zh">氛围:</span><span class="en">Culture:</span></b> <span class="zh">华人家庭聚集度最高的学区带之一,同龄人学术动机强</span><span class="en">one of the most popular areas among Chinese families, with highly motivated peers</span></li>
+        <li><b><span class="zh">配套:</span><span class="en">Support:</span></b> <span class="zh">课外补习、竞赛培训资源密集,中文服务齐全</span><span class="en">dense tutoring and competition-prep options, with Chinese-language services everywhere</span></li>
+      </ul>
+      <div class="rowline"><span class="rl"><span class="zh">租金参考</span><span class="en">Rent</span></span><span class="rv"><b><span class="zh">2房约 $3,000 起</span><span class="en">2BR from ~$3,000/mo</span></b></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">适合</span><span class="en">Best for</span></span><span class="rv"><span class="zh">重视学术竞争力、希望孩子身边都是同路人的家庭</span><span class="en">families who want rigorous academics and like-minded classmates</span></span></div>
+      <div class="insider"><span class="tag"><span class="zh">内行话</span><span class="en">Insider note</span></span>
+        <span class="zh">这两所高中属于 <b>Fremont Union High School District(FUHSD)</b>,学区横跨 Cupertino、San Jose、Sunnyvale 等多个城市 —— Lynbrook 其实在圣何塞地界。<b>决定学校的是地址,不是城市名。</b>另外特别注意:FUHSD 与下面 Fremont 市的 <b>Fremont Unified(FUSD)</b> 是<b>两个完全不同的学区</b>,名字相近、位置不同,是最常被搞混的一组。</span>
+        <span class="en">Both belong to <b>Fremont Union High School District (FUHSD)</b>, which spans Cupertino, San Jose, Sunnyvale and more — Lynbrook is actually in San Jose. <b>The address decides the school, not the city name.</b> Note too: FUHSD is a <b>completely different district</b> from <b>Fremont Unified (FUSD)</b> in the city of Fremont below — similar names, different places, and the most commonly confused pair.</span>
+      </div>
+    </div>
+
+    <div class="city reveal reveal">
+      <div class="city-top"><h3>Los Altos / Mountain View</h3><span class="district">Mountain View–Los Altos Union High (MVLA)</span></div>
+      <div class="schools">Los Altos High · Mountain View High<span class="gs">GreatSchools 10/10</span></div>
+      <ul class="whylist">
+        <li><b><span class="zh">学术:</span><span class="en">Academics:</span></b> <span class="zh">两所高中 GreatSchools 均为满分 <b>10/10</b>,学术扎实但压力相对均衡</span><span class="en">both high schools rate a full <b>10/10</b> on GreatSchools, with solid academics at a more balanced pace</span></li>
+        <li><b><span class="zh">生活:</span><span class="en">Lifestyle:</span></b> <span class="zh">社区环境优雅、绿化好,通勤硅谷各大公司都方便</span><span class="en">leafy, well-kept neighborhoods with easy commutes to major Silicon Valley employers</span></li>
+        <li><b><span class="zh">房源:</span><span class="en">Inventory:</span></b> <span class="zh">公寓与独立屋兼有,租房选择比纯独立屋学区更灵活</span><span class="en">a mix of apartments and houses, so more rental options than house-only districts</span></li>
+      </ul>
+      <div class="rowline"><span class="rl"><span class="zh">租金参考</span><span class="en">Rent</span></span><span class="rv"><b><span class="zh">2房约 $3,200 起</span><span class="en">2BR from ~$3,200/mo</span></b></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">适合</span><span class="en">Best for</span></span><span class="rv"><span class="zh">想在顶尖教育与生活品质之间取得平衡的家庭</span><span class="en">families balancing top schools with quality of life</span></span></div>
+      <div class="insider"><span class="tag"><span class="zh">内行话</span><span class="en">Insider note</span></span>
+        <span class="zh">两市共用同一个高中学区(MVLA),去哪所高中<b>按地址划分,不按城市名</b>,边界犬牙交错。两所学校评分同样优秀,所以看房时的关键动作是:<b>拿具体地址到学区官方的地址查询工具上逐个核对</b>,别凭城市名想当然。</span>
+        <span class="en">The two cities share one high school district (MVLA), and which high school you get is decided <b>by address, not city name</b> — the lines interlock. Both schools rate equally well, so the key move when house-hunting is to <b>run each specific address through the district's official school locator</b> rather than assuming from the city.</span>
+      </div>
+    </div>
+
+    <div class="city reveal reveal">
+      <div class="city-top"><h3>Saratoga / Los Gatos</h3><span class="district">Los Gatos–Saratoga Union High</span></div>
+      <div class="schools">Saratoga High · Los Gatos High<span class="gs">GreatSchools 10/10</span></div>
+      <ul class="whylist">
+        <li><b><span class="zh">学术:</span><span class="en">Academics:</span></b> <span class="zh">两所高中 GreatSchools 均为满分 <b>10/10</b>;学区小而精,班级规模友好</span><span class="en">both high schools rate a full <b>10/10</b> on GreatSchools; a small, selective district with friendlier class sizes</span></li>
+        <li><b><span class="zh">社区:</span><span class="en">Community:</span></b> <span class="zh">安静高端的住宅区,治安好、家长参与度高</span><span class="en">quiet, upscale neighborhoods with safe streets and highly engaged parents</span></li>
+        <li><b><span class="zh">环境:</span><span class="en">Setting:</span></b> <span class="zh">依山而建,生活节奏比硅谷核心区舒缓</span><span class="en">set against the hills, at a calmer pace than the Silicon Valley core</span></li>
+      </ul>
+      <div class="rowline"><span class="rl"><span class="zh">租金参考</span><span class="en">Rent</span></span><span class="rv"><b><span class="zh">以独立屋为主,约 $4,200 起</span><span class="en">mostly houses, from ~$4,200/mo</span></b></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">适合</span><span class="en">Best for</span></span><span class="rv"><span class="zh">偏好安静高端社区、预算充足的家庭</span><span class="en">families seeking an upscale, quieter setting</span></span></div>
+      <div class="insider"><span class="tag"><span class="zh">内行话</span><span class="en">Insider note</span></span>
+        <span class="zh">出租房源以独立屋为主、总量稀少,好房子往往不公开挂牌就租掉了。<b>想进这里,启动时间要比别的学区更早。</b></span>
+        <span class="en">Rentals are scarce and mostly single-family homes; the good ones often go before they're listed. <b>Start earlier here than anywhere else.</b></span>
+      </div>
+    </div>
+
+    <div class="city reveal reveal">
+      <div class="city-top"><h3>Fremont <span class="zh">(Mission San Jose 板块)</span><span class="en">(Mission San Jose area)</span></h3><span class="district">Fremont Unified (FUSD)</span></div>
+      <div class="schools">Mission San Jose High<span class="gs">GreatSchools 10/10</span></div>
+      <ul class="whylist">
+        <li><b><span class="zh">学术:</span><span class="en">Academics:</span></b> <span class="zh">GreatSchools 满分 <b>10/10</b>;US News 2026-27 全加州排名第 <b>10</b> 位(全美 98),东湾第一梯队</span><span class="en">a full <b>10/10</b> on GreatSchools and <b>#10</b> among California public high schools in the US News 2026-27 list (#98 nationally) — the East Bay's top tier</span></li>
+        <li><b><span class="zh">性价比:</span><span class="en">Value:</span></b> <span class="zh">同等学术水平下,租金明显低于南湾顶尖学区</span><span class="en">comparable academics at noticeably lower rents than the top South Bay districts</span></li>
+        <li><b><span class="zh">社区:</span><span class="en">Community:</span></b> <span class="zh">亚裔家庭高度聚集,中文服务与课外资源成熟</span><span class="en">a large Asian community with mature bilingual services and tutoring options</span></li>
+      </ul>
+      <div class="rowline"><span class="rl"><span class="zh">租金参考</span><span class="en">Rent</span></span><span class="rv"><b><span class="zh">2房约 $2,800 起</span><span class="en">2BR from ~$2,800/mo</span></b></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">适合</span><span class="en">Best for</span></span><span class="rv"><span class="zh">追求顶尖学术、预算比南湾友好的家庭</span><span class="en">families who want elite academics on a saner budget</span></span></div>
+      <div class="insider"><span class="tag"><span class="zh">内行话</span><span class="en">Insider note</span></span>
+        <span class="zh">Fremont Unified 覆盖全市,但 <b>Mission San Jose High 只招收 Mission 板块内的地址</b> —— 同在 Fremont,差一条街就是另一所高中。这是最常见的误区。</span>
+        <span class="en">Fremont Unified covers the whole city, but <b>Mission San Jose High serves only addresses inside the Mission attendance area</b> — same city, one street over, different school. This is the most common mistake families make.</span>
+      </div>
+    </div>
+
+    <div class="city reveal reveal">
+      <div class="city-top"><h3>Dublin / Pleasanton / San Ramon</h3><span class="district"><span class="zh">三谷地区 · 各市独立学区</span><span class="en">Tri-Valley · separate city districts</span></span></div>
+      <div class="schools">Dougherty Valley High · Amador Valley High · Dublin High<span class="gs">GreatSchools 10/10</span></div>
+      <ul class="whylist">
+        <li><b><span class="zh">学术:</span><span class="en">Academics:</span></b> <span class="zh">三所高中 GreatSchools 均为满分 <b>10/10</b>;Dougherty Valley 在 US News 2026-27 全加州排名第 <b>25</b> 位(全美 190)</span><span class="en">all three high schools rate a full <b>10/10</b> on GreatSchools; Dougherty Valley ranks <b>#25</b> in California on the US News 2026-27 list (#190 nationally)</span></li>
+        <li><b><span class="zh">房源:</span><span class="en">Inventory:</span></b> <span class="zh">新建社区多、户型大,房源数量充足,落地难度最低</span><span class="en">newer communities, larger floor plans and ample inventory — the easiest area to land in</span></li>
+        <li><b><span class="zh">性价比:</span><span class="en">Value:</span></b> <span class="zh">同样预算,居住面积通常比南湾大一个档次</span><span class="en">the same budget typically buys noticeably more space than the South Bay</span></li>
+      </ul>
+      <div class="rowline"><span class="rl"><span class="zh">租金参考</span><span class="en">Rent</span></span><span class="rv"><b><span class="zh">2房约 $2,600 起</span><span class="en">2BR from ~$2,600/mo</span></b></span></div>
+      <div class="rowline"><span class="rl"><span class="zh">适合</span><span class="en">Best for</span></span><span class="rv"><span class="zh">预算务实、想要新房大空间的家庭</span><span class="en">practical budgets and families wanting newer, larger homes</span></span></div>
+      <div class="insider"><span class="tag"><span class="zh">内行话</span><span class="en">Insider note</span></span>
+        <span class="zh">三城分属不同学区,不能混为一谈。很多家庭把这里作为<b>"第一站"</b>:先用较低成本落地、孩子先上学,住稳之后再决定是否往南湾迁。</span>
+        <span class="en">The three cities sit in different districts, so don't treat them as one. Many families use the Tri-Valley as a <b>first step</b>: land affordably, get the kids enrolled, then decide later whether to move south.</span>
+      </div>
+    </div>
+
+    <div class="banner reveal reveal"><img src="img/campus.jpg" alt=""></div>
+  </section>
+
+  <!-- NOT A DREAM -->
+  <section id="myth">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">Not a Dream</span>
+      <h2><span class="zh">为什么"进这些学校"不是梦</span><span class="en">Why getting in is not a dream</span></h2>
+      <p><span class="zh">拦住大多数家庭的,是这四个误解。</span><span class="en">Four misconceptions stop most families — none of them hold up.</span></p>
+    </div>
+    <div class="myth reveal reveal"><div class="x">?</div><div class="m-body">
+      <h4><span class="zh">"一定要买房?"</span><span class="en">"Don't we have to buy a home?"</span></h4>
+      <p><span class="zh"><b>不用。</b>加州公立学校按居住地分配学位,持有合规租约、真实居住在学区内的家庭,同样可以为孩子办理入学。</span><span class="en"><b>No.</b> California public schools assign seats by residency. A family with a valid lease who genuinely lives in the district can enroll their child just the same.</span></p>
+    </div></div>
+    <div class="myth reveal reveal"><div class="x">?</div><div class="m-body">
+      <h4><span class="zh">"一定很贵?"</span><span class="en">"Isn't it incredibly expensive?"</span></h4>
+      <p><span class="zh"><b>比你想的灵活。</b>不同学区之间租金差距可以很大 —— 同样是优质学区,东湾和三谷的价位明显低于南湾核心区。<b>先定预算,再反推学区</b>,空间往往比想象中大。</span><span class="en"><b>More flexible than you think.</b> Rents vary a lot between strong districts — the East Bay and Tri-Valley sit well below the South Bay core. <b>Set the budget first, then work backwards to the district</b>; there's usually more room than families expect.</span></p>
+    </div></div>
+    <div class="myth reveal reveal"><div class="x">?</div><div class="m-body">
+      <h4><span class="zh">"我们不够资格?"</span><span class="en">"Are we even eligible?"</span></h4>
+      <p><span class="zh"><b>公立学校不挑家庭背景。</b>入学以居住地为准,学校注册不以家庭移民身份作为拒收理由 —— 绿卡、工签等各类身份的家庭,我都服务过。</span><span class="en"><b>Public schools don't screen family backgrounds.</b> Enrollment is residency-based, and immigration status is not a ground for refusal. I've worked with families on green cards, work visas and more.</span></p>
+    </div></div>
+    <div class="myth reveal reveal"><div class="x">?</div><div class="m-body">
+      <h4><span class="zh">"流程太复杂搞不定?"</span><span class="en">"Isn't the process too complicated?"</span></h4>
+      <p><span class="zh"><b>复杂的是信息,不是流程。</b>知道每个学区认哪些材料、什么时间线、哪些街区归哪所学校,剩下的就是按部就班。<b>难的从来不是规则,是信息 —— 这正是我做的事。</b></span><span class="en"><b>The information is complex; the process isn't.</b> Once you know which documents each district accepts, what the timeline is and which streets feed which school, it's step by step. <b>The hard part is information — and that's exactly what I do.</b></span></p>
+    </div></div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="docs">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">Enrollment Checklist</span>
+      <h2><span class="zh">入学大概需要准备什么?</span><span class="en">What you'll generally need to enroll</span></h2>
+      <p><span class="zh">各学区要求略有差异,以下为通用的四类材料,供你提前准备参考 —— 实际清单请以目标学区官方公布为准。</span><span class="en">Requirements vary by district; these four categories cover the essentials so you can prepare early. Always follow the target district's official list.</span></p>
+    </div>
+    <div class="grid2">
+      <div class="check reveal reveal">
+        <h4><span class="zh">① 居住证明</span><span class="en">① Proof of residency</span></h4>
+        <p><span class="zh">合规租约(或房产证明),通常还需要 1-2 份水电气等账单佐证。这是最核心的一项,也正是我协助你完成的部分。</span><span class="en">A valid lease (or ownership document), usually with one or two utility bills as support. This is the core requirement — and the part I help you with.</span></p>
+        <p class="tip"><span class="zh">小贴士:各学区认可的账单类型不同 —— 有的认水电燃气,不认手机账单。签约前先确认清单,免得白跑一趟。</span><span class="en">Tip: districts accept different bill types — many take utilities but not phone bills. Confirm the list before signing.</span></p>
+      </div>
+      <div class="check reveal reveal">
+        <h4><span class="zh">② 孩子的年龄与身份证明</span><span class="en">② Child's age & identity</span></h4>
+        <p><span class="zh">出生证明或护照即可,用途是证明年龄与身份,<b>不要求美国身份</b>。</span><span class="en">A birth certificate or passport — used to verify age and identity, <b>not U.S. status</b>.</span></p>
+        <p class="tip"><span class="zh">小贴士:海外出生证明建议提前准备英文翻译件,部分学区要求公证。</span><span class="en">Tip: have foreign birth certificates translated into English in advance; some districts ask for notarization.</span></p>
+      </div>
+      <div class="check reveal reveal">
+        <h4><span class="zh">③ 健康与疫苗记录</span><span class="en">③ Health & immunization records</span></h4>
+        <p><span class="zh">加州对入学疫苗有明确要求,需要提供接种记录;海外记录需翻译,缺少的项目通常可以在本地补种。</span><span class="en">California has specific immunization requirements for enrollment. Overseas records need translation, and missing shots can usually be completed locally.</span></p>
+        <p class="tip"><span class="zh">小贴士:这是海外家庭最常卡住的一项,落地前就开始准备最从容。</span><span class="en">Tip: this is where overseas families most often get stuck — start before you arrive.</span></p>
+      </div>
+      <div class="check reveal reveal">
+        <h4><span class="zh">④ 学业材料</span><span class="en">④ Academic records</span></h4>
+        <p><span class="zh">原学校成绩单或在读证明;海外学生建议附英文翻译件,便于学校做年级安置。</span><span class="en">Transcripts or proof of enrollment from the previous school; English translations help the school place your child correctly.</span></p>
+        <p class="tip"><span class="zh">小贴士:高中阶段的学分认定与选课衔接,值得提前向学校咨询。</span><span class="en">Tip: for high schoolers, ask the school early about credit recognition and course placement.</span></p>
+      </div>
+    </div>
+    <div class="idbox reveal reveal">
+      <h4><span class="zh">关于家庭身份,说清楚三句话</span><span class="en">On immigration status — three plain sentences</span></h4>
+      <p><span class="zh">① 加州公立 K-12 入学以<b>居住地</b>为准,学校注册不以家庭移民身份作为拒收理由。</span><span class="en">① California public K-12 enrollment is based on <b>residency</b>; immigration status is not a ground for refusal.</span></p>
+      <p><span class="zh">② 绿卡、工签等各类身份的家庭,我都有服务经验。</span><span class="en">② I have experience working with families on green cards, work visas and other statuses.</span></p>
+      <p><span class="zh">③ 涉及签证与身份的具体问题,<b>请咨询持牌移民律师</b> —— 我负责的是住房这一段。</span><span class="en">③ For visa and status questions, <b>consult a licensed immigration attorney</b> — my role is the housing side.</span></p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">How I Help</span>
+      <h2><span class="zh">我的服务:租房落地 + 买房升级</span><span class="en">My service: rent to land, buy to settle</span></h2>
+      <p><span class="zh">我是持牌地产经纪,做的是<b>房子</b>这一段 —— 把你送到对的学区、对的街区、对的房子里。</span><span class="en">I'm a licensed real estate agent. My work is the <b>housing</b> side — getting you into the right district, the right neighborhood, the right home.</span></p>
+    </div>
+    <div class="steps">
+      <div class="step reveal reveal"><div class="sn">一</div><h4><span class="zh">选学区</span><span class="en">Choose the district</span></h4><p><span class="zh">按孩子年级、预算与家庭规划,一起锁定目标学区与就读边界。</span><span class="en">Match district and attendance boundary to your child's grade, your budget and your plans.</span></p></div>
+      <div class="step reveal reveal"><div class="sn">二</div><h4><span class="zh">找房看房</span><span class="en">Find & tour</span></h4><p><span class="zh">筛选目标边界内的合适房源,人在外州或海外也能视频看房。</span><span class="en">Source homes inside the target boundary; tour by video if you're out of state or overseas.</span></p></div>
+      <div class="step reveal reveal"><div class="sn">三</div><h4><span class="zh">谈判签约</span><span class="en">Negotiate & sign</span></h4><p><span class="zh">与房东沟通条件、争取合理价格,协助完成租约或购房交易。</span><span class="en">Work the terms with landlords, push for a fair price, and close the lease or purchase.</span></p></div>
+      <div class="step reveal reveal"><div class="sn">四</div><h4><span class="zh">安家入住</span><span class="en">Move in & settle</span></h4><p><span class="zh">交接、水电开通、本地生活资源推荐 —— 把家安顿好。</span><span class="en">Handover, utilities, local resources — getting your household settled.</span></p></div>
+    </div>
+
+    <div class="scope reveal reveal">
+      <h3><span class="zh">我的服务边界(先说清楚)</span><span class="en">What I do — and what I don't</span></h3>
+      <div class="scope-cols">
+        <div>
+          <h4><span class="zh">✅ 我负责</span><span class="en">✅ I handle</span></h4>
+          <ul>
+            <li><span class="zh">学区与街区选址咨询</span><span class="en">District and neighborhood selection</span></li>
+            <li><span class="zh">租房与买卖的全部交易流程</span><span class="en">The full rental or purchase transaction</span></li>
+            <li><span class="zh">房源筛选、看房、与房东沟通谈判</span><span class="en">Sourcing homes, tours, landlord negotiation</span></li>
+            <li><span class="zh">交接、水电开通与本地生活资源推荐</span><span class="en">Handover, utilities, local resource referrals</span></li>
+            <li><span class="zh">提供各学区<b>公开</b>的材料清单与时间线作为参考</span><span class="en">Sharing each district's <b>publicly available</b> checklist and timeline for reference</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4><span class="zh">❌ 我不代办</span><span class="en">❌ I don't do</span></h4>
+          <ul>
+            <li><span class="zh">入学申请与注册代办 —— <b>由家长按学区官方流程自行办理</b></span><span class="en">Filing enrollment — <b>parents complete this with the district directly</b></span></li>
+            <li><span class="zh">任何录取、注册或入学结果的承诺与担保</span><span class="en">Any promise or guarantee of admission or enrollment outcomes</span></li>
+            <li><span class="zh">签证、移民、法律与税务意见 —— 请咨询相应持牌专业人士</span><span class="en">Visa, immigration, legal or tax advice — see the appropriate licensed professional</span></li>
+            <li><span class="zh">学校内部事务、分班、择校申诉等教育机构事项</span><span class="en">School-internal matters: placement, transfers, appeals</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc2 reveal reveal">
+      <h3><span class="zh">住稳之后想买房?</span><span class="en">Ready to buy later?</span></h3>
+      <p><span class="zh">很多家庭先租后买:先落地、孩子先上学,住上一两年摸清社区再出手。学区房的买卖我同样全程服务 —— 一个人负责到底,不用中途换人。</span><span class="en">Many families rent first and buy later: land, enroll the kids, learn the neighborhood for a year or two, then purchase. I handle school-district purchases too — one person, end to end, no handoffs.</span></p>
+    </div>
+    <div class="banner reveal reveal"><img src="img/family.jpg" alt=""></div>
+  </section>
+
+  <!-- CASES -->
+  <section id="cases">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">Real Families</span>
+      <h2><span class="zh">真实落地案例</span><span class="en">Families who made it</span></h2>
+    </div>
+    <div class="grid2">
+      <div class="case reveal reveal">
+        <span class="from"><span class="zh">上海 → Palo Alto · 租房</span><span class="en">Shanghai → Palo Alto · Rental</span></span>
+        <h3><span class="zh">刚拿绿卡,为教育举家而来</span><span class="en">New green card, moving for education</span></h3>
+        <p><span class="zh"><b>卡在哪:</b>全家对湾区完全陌生,连该看哪个城市、哪个学区都无从下手,更不知道租房到底能不能上好学校。</span><span class="en"><b>The sticking point:</b> the family knew nothing about the Bay Area — not which city, not which district, and not whether renting could even get them into a strong school.</span></p>
+        <p><span class="zh"><b>怎么做的:</b>先隔着时差做学区策略,把目标边界锁定在 Palo Alto;再按边界筛房源、视频看房,和房东把条件谈下来。</span><span class="en"><b>What we did:</b> worked out the district strategy across time zones, locked the target boundary in Palo Alto, then sourced homes inside it, toured by video and negotiated the terms.</span></p>
+        <p><span class="zh"><b>结果:</b>以<b>低于他们预期的租金</b>签约落地。安顿之后,家长按学区流程办理注册,孩子顺利入读 Palo Alto High。</span><span class="en"><b>Outcome:</b> they signed <b>below the rent they'd budgeted for</b>. Once settled, the parents completed enrollment with the district, and their child started at Palo Alto High.</span></p>
+      </div>
+      <div class="case reveal reveal">
+        <span class="from"><span class="zh">中国东北 → Palo Alto · 租房</span><span class="en">Northeast China → Palo Alto · Rental</span></span>
+        <h3><span class="zh">孩子还在国内,家长先行铺路</span><span class="en">Parents landing first, child still in China</span></h3>
+        <p><span class="zh"><b>卡在哪:</b>持绿卡,但在本地始终找不到合适的房子;家长还要同步安排本地工作与生活,两头烧。</span><span class="en"><b>The sticking point:</b> green cards in hand, but no suitable home turning up — while the parents also had to line up work and daily life here.</span></p>
+        <p><span class="zh"><b>怎么做的:</b>把"住"这块接过来,按目标学区边界持续跟房源,按正常市场价拿下合适的房子,让家长能专心处理工作安排。</span><span class="en"><b>What we did:</b> took the housing side off their plate, tracked inventory inside the target boundary, and secured the right home at market rate so they could focus on work.</span></p>
+        <p><span class="zh"><b>结果:</b>全家顺利安顿,孩子随后抵美,入读 Palo Alto High。</span><span class="en"><b>Outcome:</b> the household settled in, their child arrived soon after and started at Palo Alto High.</span></p>
+      </div>
+      <div class="case reveal reveal">
+        <span class="from"><span class="zh">湾区本地 → 升级学区 · 租房</span><span class="en">Local Bay Area → Better district · Rental</span></span>
+        <h3><span class="zh">本地家庭,想换更好的学区</span><span class="en">A local family moving up a tier</span></h3>
+        <p><span class="zh"><b>卡在哪:</b>孩子要升学,现居学区一般。一直觉得"好学区 = 高不可攀",迟迟不敢动。</span><span class="en"><b>The sticking point:</b> their child was moving up a grade level and the current district was mediocre — but they assumed strong districts were simply out of reach, so they never moved.</span></p>
+        <p><span class="zh"><b>怎么做的:</b>把各学区的真实租金行情摊开对比,找出性价比最高的街区,在他们<b>原本就负担得起的价位区间</b>里锁定房源。</span><span class="en"><b>What we did:</b> laid out the real rent ranges across districts side by side, found the best-value neighborhoods, and searched <b>inside the budget they already had</b>.</span></p>
+        <p><span class="zh"><b>结果:</b>预算没有超支,全家搬入目标优质学区 —— 学校上了一个台阶,生活没有被房租绑架。</span><span class="en"><b>Outcome:</b> no budget blowout, and the family moved into their target district — a real step up in schools without being squeezed by rent.</span></p>
+      </div>
+      <div class="case reveal reveal">
+        <span class="from"><span class="zh">外州 → 湾区 Relocation · 租房</span><span class="en">Out of state → Bay Area · Rental</span></span>
+        <h3><span class="zh">工作调动,时间紧人还在外州</span><span class="en">A job transfer on a tight clock</span></h3>
+        <p><span class="zh"><b>卡在哪:</b>因工作调动全家搬来湾区,报到日期定死,人还在外州,孩子还要赶上开学。</span><span class="en"><b>The sticking point:</b> a job transfer with a fixed start date, the family still out of state, and a child who needed to make the start of term.</span></p>
+        <p><span class="zh"><b>怎么做的:</b>全程远程推进 —— 先定学区与预算,我实地看房拍片、视频带看,电子签约、远程付款,一步不耽误。</span><span class="en"><b>What we did:</b> ran the whole thing remotely — settled district and budget, toured homes in person on video for them, then handled e-signing and remote payment without losing a step.</span></p>
+        <p><span class="zh"><b>结果:</b>人到湾区之前房子已经签好,落地即入住,孩子赶上了开学季。搬家、换城市、找学区,一次理顺。</span><span class="en"><b>Outcome:</b> the lease was signed before they landed, they moved straight in, and their child made the start of term — relocation, new city and school district sorted in one pass.</span></p>
+      </div>
+    </div>
+    <p class="case-note"><span class="zh">* 以上为真实客户经历,细节已做匿名处理。每个家庭的情况、预算与时间线各不相同,过往案例不构成对任何个案结果的承诺或保证。入学注册均由家长依据学区官方流程自行办理。</span><span class="en">* Real client experiences, anonymized. Every family's situation, budget and timeline differ, and past cases are not a promise or guarantee of any individual outcome. In every case, enrollment was completed by the parents through the district's own official process.</span></p>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2><span class="zh">家长最常问的十个问题</span><span class="en">Ten questions parents ask most</span></h2>
+    </div>
+
+    <details class="faq" open><summary><span class="q">Q1</span><span class="zh">几月份开始找房最合适?</span><span class="en">When should we start looking?</span></summary>
+      <div class="a"><span class="zh">建议在目标入学时间前 <b>3-6 个月</b>启动。春夏(约 3 月到 8 月)是湾区租房与注册的高峰期,房源多但竞争也最激烈;秋冬房源减少,但看房的人同样少,有时反而能谈到更好的条件。如果你的时间点卡在开学前,<b>请至少预留 2 个月</b>给找房、签约和水电开通,这样注册材料才来得及准备。</span><span class="en">Start <b>3-6 months</b> before your target enrollment date. Spring and summer (roughly March to August) are peak season here — the most inventory, and the most competition. Autumn and winter have fewer listings but also fewer competing renters, so terms are sometimes better. If you're aiming at the start of term, <b>leave at least two months</b> for searching, signing and getting utilities connected, so your documents are ready in time.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q2</span><span class="zh">租房和买房,哪个更适合我们?</span><span class="en">Should we rent or buy?</span></summary>
+      <div class="a"><span class="zh">多数刚来的家庭<b>先租后买</b>,原因有三:一是租房落地快,不必等贷款和过户;二是住上一两年才真正摸清社区、通勤和学校氛围,买房决策更稳;三是初到美国往往还没有本地信用与收入记录,贷款条件未必理想。等住稳了再买,选择会更从容。两个阶段我都能服务,不用中途换人。</span><span class="en">Most newly arrived families <b>rent first, buy later</b>, for three reasons. Renting lands you fast, with no loan or closing to wait on. After a year or two you actually know the neighborhood, the commute and the school culture, so the purchase decision is sounder. And new arrivals often lack U.S. credit and income history, so mortgage terms may not be ideal yet. Buying once you're settled gives you better options. I handle both stages.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q3</span><span class="zh">租约有什么要求?</span><span class="en">What does the lease need to look like?</span></summary>
+      <div class="a"><span class="zh">学区通常要求一份<b>正式、合规、注明地址与承租人的租约</b>,并以水电燃气等账单作为佐证。不同学区对租期长度、是否需要房东另行签署居住确认、以及认可哪些账单类型,要求各不相同。<b>最稳妥的做法是在签约前就调出目标学区的官方清单逐项核对</b> —— 这是我在找房阶段就会帮你盯住的环节。</span><span class="en">Districts generally want a <b>formal, valid lease showing the address and the tenants</b>, backed by utility bills. Requirements differ on lease length, whether the landlord must separately sign a residency confirmation, and which bill types count. <b>The safest approach is to pull the target district's official list and check it item by item before signing</b> — something I watch for during the search.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q4</span><span class="zh">学区会核查居住情况吗?</span><span class="en">Do districts verify residency?</span></summary>
+      <div class="a"><span class="zh">会。部分学区设有专门的居住核查流程,可能要求补充材料,个别情况下还会安排上门核实。所以我的原则只有一条:<b>真实入住</b>。用真实的居住去注册,核查就只是流程。反过来,挂靠地址、借用亲友住址这类做法风险很高 —— 一旦被认定不实,孩子可能被取消学位,<b>这类操作我不参与,也不建议任何家庭尝试。</b></span><span class="en">Yes. Some districts run formal residency verification, may request extra documents, and occasionally arrange a home visit. So my rule is simple: <b>actually live there</b>. With genuine residency, verification is just paperwork. Using a borrowed address or a relative's address is high risk — if it's found to be false, a child can lose their place. <b>I don't take part in that, and I don't recommend any family try it.</b></span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q5</span><span class="zh">海外家庭没有美国信用记录,能租到房吗?</span><span class="en">Can overseas families rent without U.S. credit history?</span></summary>
+      <div class="a"><span class="zh">可以,这种情况很常见。常见的解决方式包括:提供收入或资产证明、提供国内银行流水与翻译件、在法律允许范围内调整押金与付款安排、或由在美有信用记录的亲属担任共同承租人。关键在于<b>有人替你把情况和房东说清楚</b>,让对方理解你的还款能力 —— 这正是我在谈判环节要做的事。</span><span class="en">Yes, and it's common. Typical routes include proof of income or assets, translated bank statements from your home country, deposit and payment arrangements adjusted within what the law allows, or a co-signer with U.S. credit history. The key is <b>having someone explain your situation to the landlord clearly</b> so they understand you can pay — that's exactly what I do in negotiation.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q6</span><span class="zh">预算大概要准备多少?</span><span class="en">How much budget do we need?</span></summary>
+      <div class="a"><span class="zh">跨度很大,取决于学区与户型。<b>三谷地区(Dublin/Pleasanton/San Ramon)2 房约 $2,600 起,Fremont Mission 板块约 $2,800 起,Cupertino 约 $3,000 起,Palo Alto 约 $3,500 起,Saratoga 独立屋 $4,200 以上。</b>除月租之外,还要预留押金(通常约一到两个月租金)、水电开通费用与搬家费。<b>先定预算、再反推学区</b>,通常比先认定某个学区更实际。</span><span class="en">It varies widely by district and home size. <b>Tri-Valley (Dublin / Pleasanton / San Ramon) 2BRs start around $2,600; Fremont's Mission area around $2,800; Cupertino around $3,000; Palo Alto around $3,500; Saratoga houses $4,200 and up.</b> Beyond rent, budget for a deposit (typically one to two months), utility setup and moving costs. <b>Setting the budget first and working back to the district</b> is usually more realistic than fixing on one district up front.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q7</span><span class="zh">孩子能在学期中间转学插班吗?</span><span class="en">Can my child transfer mid-year?</span></summary>
+      <div class="a"><span class="zh">可以。公立学校全年接受符合居住条件的转入,材料齐备的话注册通常不需要太久。需要留意的是年级安置与课程衔接 —— 尤其是高中阶段,原校学分如何认定、能否选到需要的课程,<b>建议提前直接向目标学校咨询</b>。住房这边,我会配合你的时间节点安排看房与签约。</span><span class="en">Yes. Public schools accept qualifying transfers year-round, and with documents in order registration usually doesn't take long. What needs attention is grade placement and course continuity — especially in high school, where credit recognition and course availability matter. <b>Ask the target school directly, in advance.</b> On the housing side, I'll line up tours and signing around your timeline.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q8</span><span class="zh">只有一位家长先带孩子过来,可以吗?</span><span class="en">What if only one parent comes with the child?</span></summary>
+      <div class="a"><span class="zh">这种安排很常见,一方先带孩子落地、另一方后续过来或两地往返。租约与居住证明以<b>实际入住的家庭成员</b>为准;部分学区对监护关系或家长授权会有额外的文件要求,具体以目标学区的规定为准。住房这边不受影响 —— 一个人签约、后续增加家庭成员,都是常规操作。</span><span class="en">This is a common arrangement — one parent lands with the child while the other follows or travels back and forth. The lease and residency documents reflect <b>whoever actually lives there</b>; some districts ask for extra paperwork on guardianship or parental authorization, so check the target district's rules. The housing side isn't affected — signing alone and adding household members later is routine.</span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q9</span><span class="zh">人在外州或海外,看不了房怎么办?</span><span class="en">We're out of state or overseas and can't view homes — now what?</span></summary>
+      <div class="a"><span class="zh">全流程可以远程完成,我服务过的家庭里有相当一部分就是这样落地的。具体做法:我实地看房、拍摄完整视频并直播带看,把采光、噪音、周边环境这些照片拍不出来的细节讲清楚;随后电子签约、远程付款。<b>人到湾区之前房子已经就绪,落地即入住。</b></span><span class="en">The whole process can run remotely — a good share of the families I've worked with landed exactly this way. In practice: I tour in person, film the property in full and walk you through it live, covering the things photos miss — light, noise, what's around it. Then e-signing and remote payment. <b>The home is ready before you land, so you move straight in.</b></span></div>
+    </details>
+
+    <details class="faq"><summary><span class="q">Q10</span><span class="zh">入学申请你们代办吗?能保证孩子被录取吗?</span><span class="en">Do you handle enrollment? Can you guarantee a place?</span></summary>
+      <div class="a"><span class="zh"><b>不代办,也不做任何保证。</b>我是持牌地产经纪,负责的是住房这一段:选学区、找房、谈判、签约、安家。<b>入学注册由家长依据学区官方流程自行办理,是否通过由学区依其规定审核决定。</b>我能提供的是各学区<b>公开发布</b>的材料清单与时间线作为参考,帮你提前准备、不走冤枉路 —— 但任何承诺"保证入学"的说法,都不应该从一个地产经纪口中说出来。</span><span class="en"><b>No on both counts.</b> I'm a licensed real estate agent, and my work is the housing side: district selection, search, negotiation, signing, settling in. <b>Enrollment is filed by parents through the district's official process, and the district decides under its own rules.</b> What I can offer is each district's <b>publicly published</b> checklist and timeline as a reference, so you can prepare early and avoid wasted trips — but no real estate agent should ever promise you a guaranteed place.</span></div>
+    </details>
+  </section>
+
+  <!-- CONTACT + FORM -->
+  <section id="contact">
+    <div class="sec-head reveal reveal">
+      <span class="eyebrow">Contact</span>
+      <h2><span class="zh">聊聊你家的情况</span><span class="en">Tell me about your family</span></h2>
+      <p><span class="zh">孩子几年级、大概什么时间来、预算范围 —— 留个信息或直接打电话,我先帮你把路线理清楚。<b>咨询免费,不收任何费用。</b></span><span class="en">Your child's grade, roughly when you're coming, your budget range — leave your details or just call. I'll map out your options first. <b>Consultations are free.</b></span></p>
+    </div>
+
+    <div class="formwrap reveal reveal">
+      <form id="leadform" novalidate>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="formgrid">
+          <div class="field">
+            <label for="f-name"><span class="zh">称呼 *</span><span class="en">Your name *</span></label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-phone"><span class="zh">电话 / 微信 *</span><span class="en">Phone / WeChat *</span></label>
+            <input id="f-phone" name="phone" type="text" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-need"><span class="zh">需求</span><span class="en">Looking to</span></label>
+            <select id="f-need" name="need">
+              <option value=""></option>
+              <option value="租房">租房 / Rent</option>
+              <option value="买房">买房 / Buy</option>
+              <option value="都考虑">都考虑 / Both</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-grade"><span class="zh">孩子年级</span><span class="en">Child's grade</span></label>
+            <input id="f-grade" name="grade" type="text">
+          </div>
+          <div class="field">
+            <label for="f-district"><span class="zh">目标学区或城市</span><span class="en">Target district or city</span></label>
+            <input id="f-district" name="district" type="text">
+          </div>
+          <div class="field">
+            <label for="f-timeline"><span class="zh">计划到达时间</span><span class="en">When are you coming?</span></label>
+            <input id="f-timeline" name="timeline" type="text">
+          </div>
+          <div class="field">
+            <label for="f-budget"><span class="zh">预算范围(月租或总价)</span><span class="en">Budget (rent or price)</span></label>
+            <input id="f-budget" name="budget" type="text">
+          </div>
+          <div class="field">
+            <label for="f-location"><span class="zh">目前所在地</span><span class="en">Where are you now?</span></label>
+            <select id="f-location" name="location">
+              <option value=""></option>
+              <option value="湾区本地">湾区本地 / Bay Area</option>
+              <option value="美国外州">美国外州 / Another state</option>
+              <option value="海外">海外 / Overseas</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="f-notes"><span class="zh">想补充的情况</span><span class="en">Anything else</span></label>
+            <textarea id="f-notes" name="notes"></textarea>
+          </div>
+        </div>
+        <div class="formfoot">
+          <button class="btn primary" type="submit" id="submitbtn"><span><span class="zh">提交,等 Ryan 联系我</span><span class="en">Submit — Ryan will reach out</span></span><span class="bb" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+          <span class="privacy"><span class="zh">你的信息只用于本次咨询联系,不会分享给第三方。</span><span class="en">Your details are used only to follow up on this enquiry and are never shared.</span></span>
+        </div>
+      </form>
+      <div class="formmsg ok" id="msg-ok" hidden>
+        <span class="zh"><b>✓ 已收到。</b>我会尽快与你联系。如果情况比较急,也可以直接打 415-968-9115 找我。</span>
+        <span class="en"><b>✓ Received.</b> I'll be in touch shortly. If it's urgent, call me directly at 415-968-9115.</span>
+      </div>
+      <div class="formmsg err" id="msg-err" hidden>
+        <span class="zh"><b>提交没能发送出去。</b>请直接致电 <b>415-968-9115</b>,或发邮件到 <b>sfryanyan@gmail.com</b>,我一样会尽快回复。</span>
+        <span class="en"><b>That didn't go through.</b> Please call <b>415-968-9115</b> or email <b>sfryanyan@gmail.com</b> — I'll reply just as fast.</span>
+      </div>
+    </div>
+
+    <div class="contact-card reveal reveal">
+      <div class="contact-id">
+        <div class="name"><span class="seal">RY</span>Ryan Yan</div>
+        <div class="role">
+          <span class="zh">RY Homes · 湾区学区安家规划<br>中英双语持牌地产经纪 · 旧金山湾区</span>
+          <span class="en">RY Homes · School District Housing<br>Bilingual licensed real estate agent · SF Bay Area</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="eho">RY Homes · Ryan Yan · Bay Area, California · Equal Housing Opportunity</span>
+    <span class="dis zh">本页内容仅供一般参考,不构成法律、移民、税务或教育方面的专业意见,亦不构成任何入学、录取或注册结果的承诺或保证。入学注册由家长依据各学区官方流程自行办理,审核结果由学区依其规定决定。学区政策、就读边界与注册要求以各学区官方发布为准;学校评分与租金行情随时间变化,本页数据整理截至 2026 年 10 月。</span>
+    <span class="dis en">This page is for general reference only. It is not legal, immigration, tax or educational advice, and it is not a promise or guarantee of any admission or enrollment outcome. Enrollment is filed by parents through each district's official process and decided by the district under its own rules. District policies, attendance boundaries and enrollment requirements are governed by each district's official publications. School ratings and rents change over time; information here was compiled as of October 2026.</span>
+    <span class="dis">© 2026 RY Homes</span>
+  </footer>
+
+</div>
+</div>
+
+<script>
+(function(){
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbwjnqJJPLEwng3-sYWsAB-kaAK05dWtNlV4IZ6Z6CFWyFYHuZ9Mx-EagmvBHhLsxOnn/exec";
+
+  document.documentElement.classList.add('js');
+
+  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  function showAll(){ items.forEach(function(el){ el.classList.add('in'); }); }
+  if (!('IntersectionObserver' in window)) { showAll(); }
+  else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '160px 0px 160px 0px', threshold: 0 });
+    items.forEach(function(el){ io.observe(el); });
+    setTimeout(showAll, 1500);
+  }
+
+  var app = document.getElementById('app');
+  var btn = document.getElementById('langbtn');
+  try { if (localStorage.getItem('ryh-lang') === 'en') app.classList.add('en-mode'); } catch(e){}
+  btn.addEventListener('click', function(){
+    app.classList.toggle('en-mode');
+    try { localStorage.setItem('ryh-lang', app.classList.contains('en-mode') ? 'en' : 'zh'); } catch(e){}
+  });
+
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      var txt = el.textContent.trim();
+      var zh = b.querySelector('.zh'), en = b.querySelector('.en');
+      function done(){
+        var oz = zh.textContent, oe = en.textContent;
+        zh.textContent = '已复制'; en.textContent = 'Copied';
+        setTimeout(function(){ zh.textContent = oz; en.textContent = oe; }, 1500);
+      }
+      function fallback(){
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(done).catch(fallback);
+      } else { fallback(); }
+    });
+  });
+
+  var form = document.getElementById('leadform');
+  var okMsg = document.getElementById('msg-ok');
+  var errMsg = document.getElementById('msg-err');
+  var submitBtn = document.getElementById('submitbtn');
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var name = form.elements['name'].value.trim();
+    var phone = form.elements['phone'].value.trim();
+    if (!name || !phone) {
+      (!name ? form.elements['name'] : form.elements['phone']).focus();
+      return;
+    }
+    submitBtn.disabled = true;
+    okMsg.hidden = true; errMsg.hidden = true;
+
+    var params = new URLSearchParams();
+    new FormData(form).forEach(function(v, k){ params.append(k, v); });
+
+    fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: params })
+      .then(function(){
+        form.hidden = true;
+        okMsg.hidden = false;
+        okMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        errMsg.hidden = false;
+      });
+  });
+})();
+</script>
+
+</body>
+</html>
