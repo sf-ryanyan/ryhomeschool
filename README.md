@@ -1,206 +1,160 @@
-# Caben
+<div align="center">
 
-**A complete kitchen cabinet refacing website — one HTML file, no build step.**
+# RY Homes · 湾区学区安家
+**Bay Area School District Housing**
 
-### [Open the live site →](https://sf-ryanyan.github.io/caben/)
+Helping families land in top Bay Area public school districts —
+choose the district, find the home, settle in.
 
-A homeowner lands on the page, drags a before/after slider, counts their doors,
-picks a finish, and sees a real price range — then books a free measurement.
-The business owner sees the request come in, and can change the company name,
-colours and prices without touching code.
+帮助家庭落地湾区顶尖公立学区 —— 选学区、找房子、安家
 
-Caben is a fictional brand. The site is a working demonstration of what a small
-home-services company can put online.
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222?style=flat-square&logo=githubpages)
+![Bilingual](https://img.shields.io/badge/中文%20%7C%20English-3D6B52?style=flat-square)
+
+### [→ View the live site](https://sf-ryanyan.github.io/ryhomeschool/)
+
+</div>
 
 ---
 
-## What a visitor can do
+## The Service · 业务介绍
 
-| On the page | What happens |
+**RY Homes** is a bilingual real estate practice in the San Francisco Bay Area,
+focused on one thing most agents treat as an afterthought: **getting a family
+into the right school district, on the housing side.**
+
+Every year families move to the Bay Area for its public schools — from other
+US states, from overseas, or from a weaker district nearby. They run into the
+same wall: the schools are excellent, but the information is scattered, the
+attendance boundaries are counter-intuitive, and the strong rentals are gone
+before they are listed.
+
+**RY Homes 是旧金山湾区的中英双语地产服务,专注一件大多数经纪人顺带处理的事:
+把家庭送进对的学区 —— 房子这一段。**
+
+### What this practice covers · 服务范围
+
+| | Service | 服务 |
+|---|---|---|
+| ◆ | District and neighbourhood selection | 学区与街区选址咨询 |
+| ◆ | Rental search, tours and lease negotiation | 租房找房、看房与租约谈判 |
+| ◆ | Home purchase for families ready to buy | 学区房买卖全程服务 |
+| ◆ | Fully remote service for out-of-state and overseas families | 外州与海外家庭全程远程办理 |
+| ◆ | Handover, utilities and settling-in support | 交接、水电开通与落地安顿 |
+
+### Scope boundary · 服务边界
+
+This is a **real estate practice**, not an education consultancy. School
+enrollment is filed by parents through each district's own official process
+and decided by the district. Nothing here promises an admission outcome, and
+immigration, legal and tax questions go to the appropriate licensed
+professionals.
+
+**本业务为地产经纪服务,不代办入学申请,不承诺任何入学结果。**
+
+---
+
+## What's on the page · 页面内容
+
+| Section | 内容 |
 |---|---|
-| **Drag the before/after slider** | The same kitchen, old doors and new, under one handle. Works with the mouse, a finger, or the arrow keys. |
-| **Count their kitchen** | Upper doors, lower doors, drawer fronts. Plus and minus buttons, no form to fill in. |
-| **Pick a door style and finish** | Four door styles, six finishes. The photo above swaps to match the colour they choose. |
-| **See the price build up** | A range appears and updates as they change anything, with every line item shown underneath. |
-| **Read the price list** | The actual per-door and labour rates are on screen, not hidden behind a "contact us". |
-| **Browse recent work** | Four projects with door count, finish and time on site. |
-| **Book a visit** | Name, mobile, city, address, preferred time. They get a summary they can copy. |
-| **Switch language or theme** | English and Chinese, light and dark. The choice is remembered. |
+| Why the Bay Area | Four reasons the region's public schools are worth relocating for |
+| Where the good schools are | Six district areas, with ratings, rankings, rent ranges and boundary notes |
+| Why it isn't out of reach | The four misconceptions that stop most families |
+| Enrollment checklist | The four document categories families prepare, with practical tips |
+| How I help | A four-step housing process, with the service boundary stated plainly |
+| Real families | Four anonymized client stories |
+| FAQ | Ten questions parents ask most, answered at length |
+| Contact | A lead form that writes straight to a private spreadsheet |
 
 ---
 
-## What the business owner gets
+## Districts covered · 覆盖学区
 
-Three things on this page are aimed at the owner rather than the customer.
+All twelve high schools below rate **10/10 on GreatSchools**.
 
-**A live rebrand panel.** The "Make it yours" button opens a panel where the
-company name and the brand colour change across the whole page as you type.
-It is there so an owner can see their own name on the site inside ten seconds,
-before any work is quoted.
+| Area · 学区带 | District | High schools |
+|---|---|---|
+| Palo Alto | Palo Alto Unified | Palo Alto High (Paly) · Henry M. Gunn |
+| Cupertino / West San Jose | Fremont Union High | Monta Vista · Lynbrook |
+| Los Altos / Mountain View | Mountain View–Los Altos Union | Los Altos · Mountain View |
+| Saratoga / Los Gatos | Los Gatos–Saratoga Union | Saratoga · Los Gatos |
+| Fremont (Mission San Jose) | Fremont Unified | Mission San Jose |
+| Dublin / Pleasanton / San Ramon | Three separate districts | Dougherty Valley · Amador Valley · Dublin |
 
-**An owner view.** Near the bottom, a mock dashboard shows what an incoming
-request looks like: who, where, how many fronts, the estimated range, and when
-it arrived. It answers the first question every owner asks — *where do the
-leads go?*
-
-**A visible price list.** The rates are printed on the estimate screen and are
-editable in the code. An owner can hand the page to a customer and walk through
-how the number was reached.
-
----
-
-## How the estimate is calculated
-
-Nothing is random. The whole figure comes from this:
-
-```
-base      = upper doors   x upper price
-          + lower doors   x lower price
-          + drawer fronts x drawer price
-
-hardware  = total fronts  x handle price        (0 if "Keep mine")
-
-labour    = tier by total fronts:  up to 15 -> l1
-                                   16 to 25 -> l2
-                                   26 and up -> l3
-
-total     = base + hardware + labour + optional faucet + optional sink
-
-range     = total, plus and minus a set percentage, rounded to the nearest $50
-```
-
-Default rates in this demo: $85 per upper door, $95 per lower door, $65 per
-drawer front, $14 per handle; labour $450 / $700 / $950 by tier; faucet $380,
-sink $540; range plus or minus 10 percent.
+> **A note worth keeping:** *Fremont **Union** High School District* (Cupertino area)
+> and *Fremont **Unified** School District* (city of Fremont) are two different
+> districts in two different counties — the most commonly confused pair in the
+> South Bay.
 
 ---
 
-## Make it your own
+## Features · 功能特点
 
-Everything a business would change sits in one `CONFIG` block near the top of
-the script, written in plain English:
-
-```js
-brand:  "CABEN",
-area:   "San Francisco Bay Area",
-cities: ["San Jose", "Santa Clara", "Sunnyvale", ...],
-
-prices: {
-  upper: 85, lower: 95, drawer: 65, handle: 14,
-  l1: 450, l2: 700, l3: 950,
-  faucet: 380, sink: 540, range: 10
-},
-
-styles:   [ ... four door styles, each with its photo ... ],
-finishes: [ ... six colours, each with a hex value and a photo ... ],
-handles:  [ ... five hardware options ... ],
-palette:  [ ... five brand colours for the rebrand panel ... ]
-```
-
-Change a number and the whole page follows — the estimate, the breakdown and
-the printed price list all read from the same values.
-
-All wording lives in an `L` object with an English and a Chinese version of
-every string, so the site can be translated without hunting through the markup.
-
-> **Never put an API key or any other secret in this file.** It is public —
-> anyone can read the source, and leaked keys get found and abused within
-> minutes. Keys belong on a server (a Cloudflare Worker or a Vercel function),
-> never in a static page.
+- **Full Chinese / English switch** — one button swaps the entire page, remembered between visits
+- **Lead form → private spreadsheet** — submissions post to a Google Apps Script endpoint that records them and sends an email alert; a honeypot field, rate limiting and formula-injection cleaning run server-side
+- **Light and dark themes** — both designed, not inverted; colours defined in OKLCH and contrast-checked
+- **Responsive at every width** — verified at 1440px, 768px and 390px with zero horizontal overflow
+- **Accessible by default** — 4.5:1 text contrast, 44px touch targets, visible focus, reduced-motion support, fully readable without JavaScript
+- **No build step** — one self-contained HTML file plus three images
 
 ---
 
-## Receiving leads
+## Built with · 技术栈
 
-By default there is no server. A submitted request is shown back to the
-customer with a **Copy these details** button, alongside the company's name and
-number. Nothing leaves the browser.
+Plain HTML, CSS and JavaScript — no framework, no bundler, no dependencies.
 
-To receive leads by email instead, create a free form at
-[Formspree](https://formspree.io) and paste its URL into `CONFIG.formEndpoint`:
-
-```js
-formEndpoint: "https://formspree.io/f/xxxxxxx"
-```
-
-Any endpoint that accepts a JSON `POST` works the same way.
+| | |
+|---|---|
+| Typography | Fraunces · Noto Serif SC · Noto Sans SC |
+| Colour | OKLCH tokens, analogous scheme, 60-30-10 proportion |
+| Form backend | Google Apps Script → Google Sheets |
+| Hosting | GitHub Pages |
 
 ---
 
-## Built with
+## Data sources · 数据来源
 
-One `index.html` file of about 100 KB, plus an `images` folder. No framework,
-no package manager, no build step, no backend. Open the file in a browser and
-it runs.
+School ratings from **GreatSchools**, rankings from the **US News 2026-27 Best
+High Schools** list, district and attendance-boundary facts from each
+district's own published materials, and rent ranges from public market data.
+Every figure on the page was verified against its source before publication.
 
-Two things are loaded from a CDN — Google Fonts for the typefaces, and a small
-library that draws the QR code in the footer. Both fail gracefully: the page
-falls back to system fonts and hides the QR block rather than breaking.
-
-Also in the box:
-
-- **Responsive** — designed separately for desktop, tablet and phone, not
-  shrunk down from one layout
-- **Light and dark** — both designed, not inverted; follows the system setting
-  and can be overridden
-- **Bilingual** — English and Chinese throughout, including the estimate
-- **Accessible** — keyboard operable, visible focus states, text contrast
-  checked, and it respects `prefers-reduced-motion`
-- **Works without JavaScript** — the page still reads top to bottom; only the
-  interactive parts stop
+Data compiled **October 2026**. Ratings, rankings and rents change — always
+confirm with the district and the original source.
 
 ---
 
-## Publish your own copy
+## Disclaimer · 免责声明
 
-1. Create a repository and upload `index.html` and the `images` folder to the root.
-2. **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`.**
-3. The site appears at `https://YOUR-USERNAME.github.io/REPO-NAME/` within a
-   minute or two.
+This site is for general reference only. It is not legal, immigration, tax or
+educational advice, and it is not a promise or guarantee of any admission or
+enrollment outcome. District policies, attendance boundaries and enrollment
+requirements are governed by each district's official publications.
 
-No other setup is required.
+本页内容仅供一般参考,不构成法律、移民、税务或教育方面的专业意见,亦不构成任何
+入学、录取或注册结果的承诺或保证。
 
----
-
-## What it does not do
-
-Worth saying plainly, because these are the three things people ask for next:
-
-- **No photo recognition.** The customer can attach a photo, but it is a local
-  preview only — it never leaves the browser. Counting doors automatically
-  needs an AI vision model running on a server with its own API key.
-- **No payments or scheduling.** The booking form collects a request; it does
-  not take a deposit or hold a slot in a calendar.
-- **No real admin backend.** The owner view is a demonstration of the idea, not
-  a working CRM. Leads arrive by email through Formspree, or on the customer's
-  own screen to read out over the phone.
-
-All three belong in a server-backed version. This page covers the part that
-gets a stranger from "I wonder what that costs" to a booked appointment.
+**Equal Housing Opportunity**
 
 ---
 
-## Disclaimer
+## About · 关于
 
-Caben is a fictional brand created for this demonstration. The company, the
-projects, the reviews and the prices shown are illustrative and do not describe
-a real business. The service area names real Bay Area cities only to make the
-example concrete.
+Designed and built by **Ryan Yan**, a bilingual licensed real estate agent in
+the San Francisco Bay Area. Content, data verification, design and code are
+all my own work.
 
----
+由 **Ryan Yan** 设计与开发 —— 旧金山湾区中英双语持牌地产经纪。内容、数据核实、
+设计与代码均为本人完成。
 
-## License
+<div align="center">
 
-MIT. Use it commercially, rebrand it, sell work built on it. No attribution
-required.
+**[sf-ryanyan.github.io/ryhomeschool](https://sf-ryanyan.github.io/ryhomeschool/)**
 
----
+© 2026 RY Homes
 
-## About
-
-Built by **Ryan Yan**, a data analyst in the San Francisco Bay Area, as a
-demonstration of what a small local business can put online — designed, written
-and coded end to end.
-
-[github.com/sf-ryanyan](https://github.com/sf-ryanyan) ·
-[Live site](https://sf-ryanyan.github.io/caben/)
+</div>
